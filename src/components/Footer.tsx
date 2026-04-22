@@ -7,7 +7,7 @@ export const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center gap-10">
           <div className="text-center md:text-left">
             <p className="text-[10px] uppercase font-bold text-slate-400 tracking-[0.2em]">
-              © {new Date().getFullYear()} Cogess SARL. Tous droits réservés. <br/>
+              <Link to="/admin" className="hover:text-primary-700 transition-colors">©</Link> {new Date().getFullYear()} Cogess SARL. Tous droits réservés. <br/>
               <span className="text-primary-700/50">Licence de Services Professionnels #902-11C.</span>
             </p>
           </div>

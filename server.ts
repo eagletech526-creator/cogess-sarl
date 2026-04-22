@@ -139,7 +139,7 @@ async function startServer() {
     }
   });
 
-  // Vite middleware for development
+  // Handle static files and SPA routing in production
   if (process.env.NODE_ENV !== "production") {
     const vite = await createViteServer({
       server: { middlewareMode: true },
@@ -154,9 +154,19 @@ async function startServer() {
     });
   }
 
-  app.listen(PORT, "0.0.0.0", () => {
-    console.log(`Server running on http://localhost:${PORT}`);
-  });
+  // Only listen when running locally, not in Vercel
+  if (!process.env.VERCEL) {
+    app.listen(PORT, "0.0.0.0", () => {
+      console.log(`Server running on http://localhost:${PORT}`);
+    });
+  }
+
+  return app;
 }
 
-startServer();
+// Export the app for Vercel serverless environment
+const appPromise = startServer();
+export default async (req: any, res: any) => {
+  const app = await appPromise;
+  app(req, res);
+};

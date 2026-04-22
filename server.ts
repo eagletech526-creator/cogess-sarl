@@ -3,8 +3,8 @@ import express from "express";
 import { createServer as createViteServer } from "vite";
 import path from "path";
 import { fileURLToPath } from "url";
-import { db } from "./src/lib/db";
-import { messages, users } from "./src/lib/schema";
+import { db } from "./src/lib/db.ts";
+import { messages, users } from "./src/lib/schema.ts";
 import { eq, desc } from "drizzle-orm";
 import { Resend } from "resend";
 

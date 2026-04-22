@@ -1,14 +1,14 @@
 import { Routes, Route } from "react-router-dom";
-import { Navbar } from "./components/Navbar";
-import { Footer } from "./components/Footer";
-import { UserSync } from "./components/UserSync";
-import { Home } from "./pages/Home";
-import { About } from "./pages/About";
-import { Services } from "./pages/Services";
-import { ServiceDetail } from "./pages/ServiceDetail";
-import { Contact } from "./pages/Contact";
-import { Admin } from "./pages/Admin";
-import { ScrollToTop } from "./components/ScrollToTop";
+import { Navbar } from "./components/Navbar.tsx";
+import { Footer } from "./components/Footer.tsx";
+import { UserSync } from "./components/UserSync.tsx";
+import { Home } from "./pages/Home.tsx";
+import { About } from "./pages/About.tsx";
+import { Services } from "./pages/Services.tsx";
+import { ServiceDetail } from "./pages/ServiceDetail.tsx";
+import { Contact } from "./pages/Contact.tsx";
+import { Admin } from "./pages/Admin.tsx";
+import { ScrollToTop } from "./components/ScrollToTop.tsx";
 
 export default function App() {
   return (

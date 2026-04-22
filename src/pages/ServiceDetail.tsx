@@ -1,7 +1,7 @@
 import { useParams, Link, Navigate } from "react-router-dom";
 import { motion } from "motion/react";
 import { ArrowLeft, CheckCircle2 } from "lucide-react";
-import { SERVICES } from "../constants";
+import { SERVICES } from "../constants.ts";
 
 export const ServiceDetail = () => {
   const { id } = useParams();

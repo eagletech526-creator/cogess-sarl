@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
-import { SERVICES } from "../constants";
+import { SERVICES } from "../constants.ts";
 import heroImg from "../assets/hero.png";
 
 export const Home = () => {

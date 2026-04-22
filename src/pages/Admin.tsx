@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import { Mail, Users, MessageSquare, Clock, ArrowLeft, Trash2 } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -25,9 +25,22 @@ export const Admin = () => {
   const [data, setData] = useState<{ messages: Message[]; users: User[] } | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [password, setPassword] = useState("");
+  const [loginError, setLoginError] = useState(false);
 
   useEffect(() => {
+    const authStatus = sessionStorage.getItem("admin_auth");
+    if (authStatus === "true") {
+      setIsAuthenticated(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!isAuthenticated) return;
+
     const fetchData = async () => {
+      setLoading(true);
       try {
         const response = await fetch("/api/admin/data");
         if (!response.ok) throw new Error("Failed to fetch admin data");
@@ -42,7 +55,18 @@ export const Admin = () => {
     };
 
     fetchData();
-  }, []);
+  }, [isAuthenticated]);
+
+  const handleLogin = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (password === "dev-cogess") {
+      setIsAuthenticated(true);
+      sessionStorage.setItem("admin_auth", "true");
+      setLoginError(false);
+    } else {
+      setLoginError(true);
+    }
+  };
 
   const handleDelete = async (id: string) => {
     if (!confirm("Voulez-vous vraiment supprimer ce message ?")) return;
@@ -61,7 +85,48 @@ export const Admin = () => {
     }
   };
 
-  if (loading) {
+  if (!isAuthenticated) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-slate-50 px-6 font-sans">
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          className="bg-white p-10 rounded-2xl border border-slate-200 shadow-2xl w-full max-w-md text-center"
+        >
+          <div className="w-16 h-16 bg-primary-700 text-white rounded-2xl flex items-center justify-center mx-auto mb-8 shadow-xl">
+             <Link to="/" className="text-3xl font-black italic">C</Link>
+          </div>
+          <h2 className="text-2xl font-black italic text-slate-900 mb-2 uppercase tracking-tight">Accès Sécurisé</h2>
+          <p className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-8">Cogess SARL Administration</p>
+          
+          <form onSubmit={handleLogin} className="space-y-6">
+            <div>
+              <input 
+                type="password" 
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Mot de passe confidentiel"
+                className={`w-full p-5 bg-slate-50 border ${loginError ? 'border-red-500 bg-red-50' : 'border-slate-200 focus:border-primary-700'} rounded-xl outline-none transition-all text-center font-bold tracking-widest`}
+                autoFocus
+              />
+              {loginError && <p className="text-red-500 text-[10px] font-bold uppercase tracking-widest mt-3 animate-pulse">Accès Refusé. Code incorrect.</p>}
+            </div>
+            <button 
+              type="submit"
+              className="w-full py-5 bg-primary-700 text-white text-xs font-black rounded-xl uppercase tracking-[0.3em] hover:bg-primary-800 transition-all shadow-xl active:scale-95"
+            >
+              Déverrouiller
+            </button>
+            <Link to="/" className="inline-block text-[10px] font-bold text-slate-400 uppercase tracking-widest hover:text-primary-700 mt-4 transition-colors">
+              ← Retour au site public
+            </Link>
+          </form>
+        </motion.div>
+      </div>
+    );
+  }
+
+  if (loading && isAuthenticated) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-slate-50">
         <div className="w-12 h-12 border-4 border-primary-700/20 border-t-primary-700 rounded-full animate-spin"></div>
@@ -69,7 +134,7 @@ export const Admin = () => {
     );
   }
 
-  if (error) {
+  if (error && isAuthenticated) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-slate-50 px-6 text-center">
         <h2 className="text-2xl font-bold text-slate-900 mb-4">{error}</h2>

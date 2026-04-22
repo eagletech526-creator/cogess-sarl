@@ -18,7 +18,8 @@ export const SERVICES = [
       "Manucure, Pédicure & Onglerie",
       "Salon de coiffure femmes & enfants",
       "Vente de mèches, perruques & cosmétiques"
-    ]
+    ],
+    image: "https://images.unsplash.com/photo-1560750588-73207b1ef5b8?q=80&w=1200&h=675&auto=format&fit=crop"
   },
   {
     id: "immigration-canada",
@@ -31,7 +32,8 @@ export const SERVICES = [
       "Permis de travail, études & séjour",
       "Résidence permanente & Regroupement familial",
       "Enrôlement billets d'avion & Hôtels"
-    ]
+    ],
+    image: "https://images.unsplash.com/photo-1517090504586-fde19ea6066f?q=80&w=1200&h=675&auto=format&fit=crop"
   },
   {
     id: "logistics-transport",
@@ -44,7 +46,8 @@ export const SERVICES = [
       "Transport Import-Export",
       "Liaison logistique Loum-Douala",
       "Gestion sécurisée du fret"
-    ]
+    ],
+    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&h=675&auto=format&fit=crop"
   },
   {
     id: "domestic-training",
@@ -57,7 +60,8 @@ export const SERVICES = [
       "Livraison gratuite dès 5000 XAF d'achat",
       "Formations certifiantes en cosmétique",
       "Ateliers de fabrication de produits ménagers"
-    ]
+    ],
+    image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1200&h=675&auto=format&fit=crop"
   },
   {
     id: "real-estate-lottery",
@@ -70,7 +74,8 @@ export const SERVICES = [
       "Maintenance & Restauration d'immeubles",
       "Garantie de revenus locatifs",
       "Services de loterie & Conciergerie"
-    ]
+    ],
+    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1200&h=675&auto=format&fit=crop"
   }
 ];
 

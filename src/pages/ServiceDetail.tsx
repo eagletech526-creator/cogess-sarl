@@ -35,7 +35,7 @@ export const ServiceDetail = () => {
 
         <div className="aspect-video w-full bg-slate-100 rounded-xl overflow-hidden mb-12 border border-slate-200 shadow-sm">
           <img 
-            src={`https://picsum.photos/seed/${service.id}/1200/675`}
+            src={(service as any).image}
             alt={service.title}
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"

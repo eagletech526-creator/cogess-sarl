@@ -66,14 +66,16 @@ export const Contact = () => {
             
             <div className="grid sm:grid-cols-2 gap-8">
               <div className="space-y-1">
-                <p className="text-[10px] uppercase font-bold text-slate-400 tracking-widest">Adresse du Siège</p>
-                <p className="text-sm text-slate-700">Pôle Technologique de Luxembourg</p>
-                <p className="text-xs text-slate-500 font-medium italic">Disponible pour audit en personne.</p>
+                <p className="text-[10px] uppercase font-bold text-slate-400 tracking-widest">Nos Adresses</p>
+                <p className="text-sm text-slate-700">Loum : 100m du carrefour Ngodji</p>
+                <p className="text-sm text-slate-700">Douala : Ndokpassi, derrière le commissariat 14e</p>
+                <p className="text-xs text-slate-500 font-medium italic">Cameroun.</p>
               </div>
               <div className="space-y-1">
                 <p className="text-[10px] uppercase font-bold text-slate-400 tracking-widest">Contact Direct</p>
-                <p className="text-sm text-slate-700">contact@cogess.com</p>
-                <p className="text-xs text-slate-500 font-medium italic">Canal sécurisé et crypté.</p>
+                <p className="text-sm text-slate-700">Tél : 691293948</p>
+                <p className="text-sm text-slate-700">WhatsApp : 671987009</p>
+                <p className="text-sm text-slate-700">cogess2026@gmail.com</p>
               </div>
             </div>
           </div>

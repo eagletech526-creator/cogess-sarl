@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 import { SERVICES } from "../constants";
+import heroImg from "../assets/hero.png";
 
 export const Home = () => {
   return (
@@ -16,11 +17,11 @@ export const Home = () => {
               className="flex-1"
             >
               <h1 className="text-5xl lg:text-7xl font-extrabold text-slate-900 leading-[1.1] mb-8 max-w-3xl">
-                Solutions Stratégiques pour <br/>
-                <span className="text-primary-700">l'Excellence d'Entreprise.</span>
+                L'Excellence Multiservices <br/>
+                <span className="text-primary-700">à Votre Portée.</span>
               </h1>
               <p className="text-lg lg:text-xl text-slate-600 mb-12 leading-relaxed max-w-xl">
-                Nous fournissons des services spécialisés de gestion et d'ingénierie adaptés pour optimiser vos opérations et stimuler une croissance durable.
+                De la beauté à l'immigration vers le Canada, en passant par la logistique et l'immobilier, Cogess SARL est votre partenaire de confiance au Cameroun.
               </p>
               <div className="flex flex-col sm:flex-row gap-6">
                 <Link 
@@ -46,10 +47,9 @@ export const Home = () => {
             >
               <div className="p-4 bg-white border-4 border-white shadow-2xl rounded-sm">
                 <img 
-                  src="https://picsum.photos/seed/corporate-hq/1200/800"
-                  alt="Corporate Excellence"
+                  src={heroImg}
+                  alt="Cogess SARL Multiservices"
                   className="w-full h-auto rounded-sm object-cover"
-                  referrerPolicy="no-referrer"
                 />
               </div>
             </motion.div>

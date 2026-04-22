@@ -3,6 +3,7 @@ import { Building2, Menu, X, User } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { SignInButton, SignOutButton, UserButton, useUser } from "@clerk/clerk-react";
+import logoImg from "../assets/logo.jpg";
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -33,9 +34,11 @@ export const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="flex justify-between items-center">
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-primary-700 rounded-lg flex items-center justify-center text-white font-bold text-xl">C</div>
-            <span className="text-2xl font-bold tracking-tight text-slate-900">
+          <Link to="/" className="flex items-center space-x-3">
+            <div className="w-12 h-12 bg-white rounded-lg overflow-hidden border border-slate-100 shadow-sm">
+              <img src={logoImg} alt="Cogess Logo" className="w-full h-full object-contain" />
+            </div>
+            <span className="text-2xl font-black italic tracking-tighter text-slate-900">
               COGESS <span className="text-primary-700">SARL</span>
             </span>
           </Link>

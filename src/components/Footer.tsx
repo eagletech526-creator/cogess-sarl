@@ -14,7 +14,7 @@ export const Footer = () => {
           <div className="flex space-x-8 text-[10px] uppercase font-bold text-slate-400 tracking-widest">
             <Link to="/legal" className="hover:text-primary-700 cursor-pointer transition-colors">Mentions Légales</Link>
             <Link to="/privacy" className="hover:text-primary-700 cursor-pointer transition-colors">Politique de Confidentialité</Link>
-            <span className="text-primary-700">HQ: Luxembourg-Ville</span>
+            <span className="text-primary-700">HQ: Loum / Douala, CM</span>
           </div>
         </div>
       </div>

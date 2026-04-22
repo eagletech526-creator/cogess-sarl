@@ -1,6 +1,6 @@
 import { neon } from '@neondatabase/serverless';
 import { drizzle } from 'drizzle-orm/neon-http';
-import * as schema from './schema.ts';
+import * as schema from './schema.js';
 
 /**
  * Cleans the DATABASE_URL if it contains psql command wrappers or quotes.

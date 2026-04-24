@@ -75,7 +75,7 @@ export const Contact = () => {
                 <p className="text-[10px] uppercase font-bold text-slate-400 tracking-widest">Contact Direct</p>
                 <p className="text-sm text-slate-700">Tél : 691293948</p>
                 <p className="text-sm text-slate-700">WhatsApp : 671987009</p>
-                <p className="text-sm text-slate-700">cogess2026@gmail.com</p>
+                <p className="text-sm text-slate-700">cogese2026@gmail.com</p>
               </div>
             </div>
           </div>

@@ -38,7 +38,7 @@ app.post("/api/messages", async (req, res) => {
     if (resend) {
       try {
         await resend.emails.send({
-          from: 'Cogess Contact <onboarding@resend.dev>',
+          from: 'Cogese Contact <onboarding@resend.dev>',
           to: 'eagletech526@gmail.com',
           subject: `New Request: ${subject}`,
           html: `

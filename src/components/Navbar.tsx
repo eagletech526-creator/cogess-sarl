@@ -36,10 +36,10 @@ export const Navbar = () => {
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center space-x-3">
             <div className="w-12 h-12 bg-white rounded-lg overflow-hidden border border-slate-100 shadow-sm">
-              <img src={logoImg} alt="Cogess Logo" className="w-full h-full object-contain" />
+              <img src={logoImg} alt="Cogese Logo" className="w-full h-full object-contain" />
             </div>
             <span className="text-2xl font-black italic tracking-tighter text-slate-900">
-              COGESS <span className="text-primary-700">SARL</span>
+              COGESE <span className="text-primary-700">SARL</span>
             </span>
           </Link>
 

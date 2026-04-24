@@ -31,13 +31,13 @@ export default function App() {
                 <div>
                   <h3 className="text-xs font-bold uppercase tracking-widest text-primary-700 mb-2">Identification de l'Éditeur</h3>
                   <p className="text-slate-500 leading-relaxed">
-                    Cogess SARL est une société à responsabilité limitée de droit camerounais, dont le siège social est situé à Loum (100m du carrefour Ngodji) et disposant d'une agence à Douala (Ndokpassi). 
+                    Cogese SARL est une société à responsabilité limitée de droit camerounais, dont le siège social est situé à Loum (100m du carrefour Ngodji) et disposant d'une agence à Douala (Ndokpassi). 
                   </p>
                 </div>
                 <div>
                   <h3 className="text-xs font-bold uppercase tracking-widest text-primary-700 mb-2">Activités Réglementées</h3>
                   <p className="text-slate-500 leading-relaxed">
-                    Cogess SARL exerce des activités multiservices incluant la beauté et l'esthétique, le conseil en immigration (Entrée Express Canada), le transport import-export, et la formation certifiante. Toutes nos activités sont menées en conformité avec les réglementations locales et internationales applicables.
+                    Cogese SARL exerce des activités multiservices incluant la beauté et l'esthétique, le conseil en immigration (Entrée Express Canada), le transport import-export, et la formation certifiante. Toutes nos activités sont menées en conformité avec les réglementations locales et internationales applicables.
                   </p>
                 </div>
                 <div>

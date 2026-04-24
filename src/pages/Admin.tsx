@@ -59,7 +59,7 @@ export const Admin = () => {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    if (password === "dev-cogess") {
+    if (password === "dev-cogese") {
       setIsAuthenticated(true);
       sessionStorage.setItem("admin_auth", "true");
       setLoginError(false);
@@ -97,7 +97,7 @@ export const Admin = () => {
              <Link to="/" className="text-3xl font-black italic">C</Link>
           </div>
           <h2 className="text-2xl font-black italic text-slate-900 mb-2 uppercase tracking-tight">Accès Sécurisé</h2>
-          <p className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-8">Cogess SARL Administration</p>
+          <p className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-8">Cogese SARL Administration</p>
           
           <form onSubmit={handleLogin} className="space-y-6">
             <div>
@@ -152,7 +152,7 @@ export const Admin = () => {
         <div className="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
           <div>
             <h1 className="text-2xl font-extrabold text-slate-900 tracking-tight">Admin Dashboard</h1>
-            <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mt-1">Cogess SARL Management</p>
+            <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mt-1">Cogese SARL Management</p>
           </div>
           <Link to="/" className="text-sm font-bold text-slate-600 hover:text-primary-700 flex items-center gap-2 transition-colors">
             <ArrowLeft size={16} /> Voir le Site

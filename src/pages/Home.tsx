@@ -1,7 +1,6 @@
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 import { SERVICES } from "../constants.ts";
-import heroImg from "../assets/hero.png";
 
 export const Home = () => {
   return (
@@ -21,7 +20,7 @@ export const Home = () => {
                 <span className="text-primary-700">à Votre Portée.</span>
               </h1>
               <p className="text-lg lg:text-xl text-slate-600 mb-12 leading-relaxed max-w-xl">
-                De la beauté à l'immigration vers le Canada, en passant par la logistique et l'immobilier, Cogess SARL est votre partenaire de confiance au Cameroun.
+                De la beauté à l'immigration vers le Canada, en passant par la logistique et l'immobilier, Cogese SARL est votre partenaire de confiance au Cameroun.
               </p>
               <div className="flex flex-col sm:flex-row gap-6">
                 <Link 
@@ -47,8 +46,8 @@ export const Home = () => {
             >
               <div className="p-4 bg-white border-4 border-white shadow-2xl rounded-sm">
                 <img 
-                  src={heroImg}
-                  alt="Cogess SARL Multiservices"
+                  src="/welcome image.jpg"
+                  alt="Cogese SARL Multiservices"
                   className="w-full h-auto rounded-sm object-cover"
                 />
               </div>

@@ -61,7 +61,7 @@ export const SERVICES = [
       "Formations certifiantes en cosmétique",
       "Ateliers de fabrication de produits ménagers"
     ],
-    image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1200&h=675&auto=format&fit=crop"
+    image: "/products.jpeg"
   },
   {
     id: "real-estate-lottery",

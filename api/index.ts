@@ -1,7 +1,7 @@
 import "dotenv/config";
 import express from "express";
-import { db } from "./lib/db";
-import { messages, users } from "./lib/schema";
+import { db } from "./lib/db.js";
+import { messages, users } from "./lib/schema.js";
 import { eq, desc } from "drizzle-orm";
 import { Resend } from "resend";
 

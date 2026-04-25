@@ -3,7 +3,7 @@ import { CheckCircle2, ShieldCheck, Users2, Building2 } from "lucide-react";
 
 export const About = () => {
   return (
-    <div className="bg-white min-h-screen pt-40 pb-20">
+    <div className="bg-white min-h-screen pt-48 pb-20">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-20 items-center mb-32">
           <motion.div
@@ -74,7 +74,12 @@ export const About = () => {
               { name: "Ngameni Léa", role: "Directrice d'Exploitation", image: "/directrice d'exploitation.jpg" },
               { name: "Raphaël Djomaleu", role: "Chef de Production & Vente", image: "/chef de prod de vente.jpg" },
               { name: "Réné Youmbi", role: "Administrateur Réseau", image: "/Administrateur reseau.jpg" },
-              { name: "Véronique Tcheumeni", role: "Responsable de Beauté", image: "/responsable de beaute.jpg" }
+              { name: "Véronique Tcheumeni", role: "Responsable de Beauté", image: "/responsable de beaute.jpg" },
+              {
+                name: "Junie Yimga",
+                role: "Analyste d'affaires TI",
+                image: "/analyste%20d'affaires%20TI.jpg",
+              },
             ].map((member, index) => (
               <motion.div 
                 key={index}

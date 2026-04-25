@@ -1,9 +1,10 @@
 import { motion, AnimatePresence } from "motion/react";
-import { Building2, Menu, X, User } from "lucide-react";
+import { Menu, X, User } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { SignInButton, SignOutButton, UserButton, useUser } from "@clerk/clerk-react";
 import logoImg from "../assets/logo.jpg";
+import { SITE } from "../site.js";
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -27,8 +28,19 @@ export const Navbar = () => {
   ];
 
   return (
+    <header className="fixed top-0 left-0 right-0 z-50 w-full">
+      <div className="flex flex-col gap-1.5 sm:flex-row sm:items-center sm:justify-between sm:gap-4 px-4 sm:px-6 lg:px-12 py-2 sm:py-1.5 bg-slate-900 text-slate-100 text-[10px] sm:text-xs font-semibold tracking-wide border-b border-slate-800">
+        <span className="min-w-0 sm:truncate">
+          <span className="text-slate-400 font-bold uppercase tracking-wider">RCCM</span>{" "}
+          <span className="tabular-nums text-slate-100">{SITE.rccm}</span>
+        </span>
+        <span className="shrink-0 sm:text-right">
+          <span className="text-slate-400 font-bold uppercase tracking-wider">NIU</span>{" "}
+          <span className="tabular-nums text-slate-100">{SITE.niu}</span>
+        </span>
+      </div>
     <nav 
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+      className={`w-full transition-all duration-300 ${
         isScrolled || location.pathname !== "/" ? "bg-white/95 backdrop-blur-sm py-4 shadow-sm border-b border-slate-200" : "bg-transparent py-8"
       }`}
     >
@@ -120,5 +132,6 @@ export const Navbar = () => {
         )}
       </AnimatePresence>
     </nav>
+    </header>
   );
 };

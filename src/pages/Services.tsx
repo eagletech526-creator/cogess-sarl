@@ -1,10 +1,10 @@
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
-import { SERVICES } from "../constants.ts";
+import { SERVICES } from "../constants.js";
 
 export const Services = () => {
   return (
-    <section className="py-24 pt-40 bg-slate-50 min-h-screen">
+    <section className="py-24 pt-48 bg-slate-50 min-h-screen">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="flex items-center space-x-3 mb-6">
           <div className="h-px w-10 bg-primary-700"></div>

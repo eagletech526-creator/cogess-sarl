@@ -1,20 +1,23 @@
 import { Routes, Route } from "react-router-dom";
-import { Navbar } from "./components/Navbar.tsx";
-import { Footer } from "./components/Footer.tsx";
-import { UserSync } from "./components/UserSync.tsx";
-import { Home } from "./pages/Home.tsx";
-import { About } from "./pages/About.tsx";
-import { Services } from "./pages/Services.tsx";
-import { ServiceDetail } from "./pages/ServiceDetail.tsx";
-import { Contact } from "./pages/Contact.tsx";
-import { Admin } from "./pages/Admin.tsx";
-import { ScrollToTop } from "./components/ScrollToTop.tsx";
+import { SITE } from "./site.js";
+import { Navbar } from "./components/Navbar.js";
+import { Footer } from "./components/Footer.js";
+import { UserSync } from "./components/UserSync.js";
+import { Home } from "./pages/Home.js";
+import { About } from "./pages/About.js";
+import { Services } from "./pages/Services.js";
+import { ServiceDetail } from "./pages/ServiceDetail.js";
+import { Contact } from "./pages/Contact.js";
+import { Admin } from "./pages/Admin.js";
+import { ScrollToTop } from "./components/ScrollToTop.js";
+import { Seo } from "./components/Seo.js";
 
 export default function App() {
   return (
     <div className="relative font-sans scroll-smooth min-h-screen flex flex-col">
       <UserSync />
       <ScrollToTop />
+      <Seo />
       <Navbar />
       <main className="flex-grow">
         <Routes>
@@ -25,13 +28,13 @@ export default function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/legal" element={
-            <div className="pt-40 px-12 pb-20 max-w-4xl mx-auto space-y-12">
+            <div className="pt-48 px-12 pb-20 max-w-4xl mx-auto space-y-12">
               <h1 className="text-4xl font-black italic uppercase tracking-widest text-slate-900">Mentions Légales</h1>
               <section className="space-y-6">
                 <div>
                   <h3 className="text-xs font-bold uppercase tracking-widest text-primary-700 mb-2">Identification de l'Éditeur</h3>
                   <p className="text-slate-500 leading-relaxed">
-                    Cogese SARL est une société à responsabilité limitée de droit camerounais, dont le siège social est situé à Loum (100m du carrefour Ngodji) et disposant d'une agence à Douala (Ndokpassi). 
+                    Cogese SARL est une société à responsabilité limitée de droit camerounais, dont le siège social est situé à Loum (100m du carrefour Ngodji) et disposant d&apos;une agence à Douala (Ndokpassi). RCCM&nbsp;: {SITE.rccm}. NIU&nbsp;: {SITE.niu}.
                   </p>
                 </div>
                 <div>
@@ -50,7 +53,7 @@ export default function App() {
             </div>
           } />
           <Route path="/privacy" element={
-            <div className="pt-40 px-12 pb-20 max-w-4xl mx-auto space-y-12">
+            <div className="pt-48 px-12 pb-20 max-w-4xl mx-auto space-y-12">
               <h1 className="text-4xl font-black italic uppercase tracking-widest text-slate-900">Politique de Confidentialité</h1>
               <section className="space-y-6">
                 <div>

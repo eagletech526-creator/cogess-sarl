@@ -1,7 +1,7 @@
 import { useParams, Link, Navigate } from "react-router-dom";
 import { motion } from "motion/react";
 import { ArrowLeft, CheckCircle2 } from "lucide-react";
-import { SERVICES } from "../constants.ts";
+import { SERVICES } from "../constants.js";
 
 export const ServiceDetail = () => {
   const { id } = useParams();
@@ -12,7 +12,7 @@ export const ServiceDetail = () => {
   }
 
   return (
-    <section className="py-24 pt-40 bg-white min-h-screen">
+    <section className="py-24 pt-48 bg-white min-h-screen">
       <div className="max-w-4xl mx-auto px-6 lg:px-12">
         <Link to="/services" className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-slate-400 hover:text-primary-700 transition-colors mb-12">
           <ArrowLeft size={14} />

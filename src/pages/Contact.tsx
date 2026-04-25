@@ -49,7 +49,7 @@ export const Contact = () => {
   };
 
   return (
-    <section className="py-24 pt-40 bg-white min-h-screen font-sans">
+    <section className="py-24 pt-48 bg-white min-h-screen font-sans">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
           <div>

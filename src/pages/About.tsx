@@ -1,7 +1,10 @@
 import { motion } from "motion/react";
 import { CheckCircle2, ShieldCheck, Users2, Building2 } from "lucide-react";
+import { useSiteContent } from "../cms.js";
 
 export const About = () => {
+  const { team } = useSiteContent();
+
   return (
     <div className="bg-white min-h-screen pt-48 pb-20">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
@@ -20,7 +23,7 @@ export const About = () => {
               <span className="text-primary-700">Valeurs Fondamentales.</span>
             </h1>
             <p className="text-lg text-slate-600 leading-relaxed lg:max-w-lg">
-              Cogese SARL s'engage à fournir des conseils de haute intégrité. Nous valorisons la précision, l'innovation et le partenariat à long terme avec nos clients mondiaux. Notre mission est de transformer les défis complexes en opportunités évolutives grâce à une ingénierie experte et une prospective stratégique.
+              Cogese SARL rassemble des services pratiques pour les particuliers, familles et entreprises: beauté, immigration, logistique, produits ménagers, formation et immobilier. Notre mission est d'offrir un accompagnement fiable, proche du terrain et orienté vers des résultats concrets.
             </p>
           </motion.div>
           
@@ -37,8 +40,8 @@ export const About = () => {
             </div>
             <div className="bg-slate-900 p-8 rounded-lg text-white">
               <Users2 className="w-8 h-8 text-white/30 mb-6" />
-              <h4 className="font-bold mb-3 uppercase tracking-wider text-sm">Proximity</h4>
-              <p className="text-xs text-white/50 leading-relaxed">Nous restons proches de nos clients, en veillant à comprendre les nuances de leur industrie spécifique.</p>
+              <h4 className="font-bold mb-3 uppercase tracking-wider text-sm">Proximité</h4>
+              <p className="text-xs text-white/50 leading-relaxed">Nous restons proches de nos clients, en veillant à comprendre les nuances de leurs projets et de leur environnement.</p>
             </div>
             <div className="bg-slate-50 p-8 rounded-lg border border-slate-100">
               <Building2 className="w-8 h-8 text-primary-700 mb-6" />
@@ -48,16 +51,18 @@ export const About = () => {
           </div>
         </div>
         
-        <div className="aspect-[21/9] w-full bg-slate-100 rounded-3xl overflow-hidden shadow-2xl relative mb-32">
+        <div className="aspect-[21/9] w-full bg-slate-100 rounded-2xl overflow-hidden shadow-2xl relative mb-32">
           <img 
-            src="https://picsum.photos/seed/cogese-team/1920/820"
-            alt="The Team"
-            className="w-full h-full object-cover grayscale"
-            referrerPolicy="no-referrer"
+            src="/new/immeuble1.jpg"
+            alt="Immeuble géré par Cogese SARL"
+            className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-primary-700/10 mix-blend-multiply" />
-          <div className="absolute bottom-12 left-12">
-            <p className="text-4xl lg:text-5xl font-extrabold text-white uppercase tracking-tighter">Établi en 2026</p>
+          <div className="absolute inset-0 bg-linear-to-t from-slate-950/75 via-slate-950/15 to-transparent" />
+          <div className="absolute bottom-8 left-6 right-6 sm:bottom-12 sm:left-12">
+            <p className="text-3xl lg:text-5xl font-extrabold text-white uppercase tracking-tight">Établi au Cameroun</p>
+            <p className="mt-3 max-w-xl text-sm font-medium leading-relaxed text-white/75">
+              Une équipe multiservice entre Loum et Douala, avec une attention constante portée à la qualité, la confiance et l'exécution.
+            </p>
           </div>
         </div>
 
@@ -69,18 +74,7 @@ export const About = () => {
           </div>
           
           <div className="flex flex-wrap justify-center gap-10">
-            {[
-              { name: "William Noubissie", role: "Directeur Général", image: "/Directeur generale.jpg" },
-              { name: "Ngameni Léa", role: "Directrice d'Exploitation", image: "/directrice d'exploitation.jpg" },
-              { name: "Raphaël Djomaleu", role: "Chef de Production & Vente", image: "/chef de prod de vente.jpg" },
-              { name: "Réné Youmbi", role: "Administrateur Réseau", image: "/Administrateur reseau.jpg" },
-              { name: "Véronique Tcheumeni", role: "Responsable de Beauté", image: "/responsable de beaute.jpg" },
-              {
-                name: "Junie Yimga",
-                role: "Analyste d'affaires TI",
-                image: "/analyste%20d'affaires%20TI.jpg",
-              },
-            ].map((member, index) => (
+            {team.map((member, index) => (
               <motion.div 
                 key={index}
                 initial={{ opacity: 0, y: 20 }}

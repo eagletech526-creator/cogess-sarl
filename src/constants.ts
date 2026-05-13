@@ -19,7 +19,17 @@ export const SERVICES = [
       "Salon de coiffure femmes & enfants",
       "Vente de mèches, perruques & cosmétiques"
     ],
-    image: "/perruques.jpg"
+    image: "/new/perruque.jpg",
+    gallery: [
+      "/new/tress1.jpg",
+      "/new/tresse2.jpg",
+      "/new/tresse3.jpg",
+      "/new/tresse4.jpg",
+      "/new/tresse5.jpg",
+      "/new/ongles.jpg",
+      "/new/ongles2.jpg",
+      "/new/perruques2.jpg"
+    ]
   },
   {
     id: "immigration-canada",
@@ -47,7 +57,10 @@ export const SERVICES = [
       "Liaison logistique Loum-Douala",
       "Gestion sécurisée du fret"
     ],
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&h=675&auto=format&fit=crop"
+    image: "/new/shipping.jpg",
+    gallery: [
+      "/new/decharge.jpg"
+    ]
   },
   {
     id: "domestic-training",
@@ -61,7 +74,11 @@ export const SERVICES = [
       "Formations certifiantes en cosmétique",
       "Ateliers de fabrication de produits ménagers"
     ],
-    image: "/products.jpeg"
+    image: "/new/savon liquide.jpg",
+    gallery: [
+      "/new/eau de javel.jpg",
+      "/new/vinaigre.jpg"
+    ]
   },
   {
     id: "real-estate-lottery",
@@ -75,7 +92,11 @@ export const SERVICES = [
       "Garantie de revenus locatifs",
       "Services de loterie & Conciergerie"
     ],
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1200&h=675&auto=format&fit=crop"
+    image: "/new/immeuble1.jpg",
+    gallery: [
+      "/new/immeuble2.jpg",
+      "/new/immeuble3.jpg",
+      "/new/immeuble4.jpg"
+    ]
   }
 ];
-

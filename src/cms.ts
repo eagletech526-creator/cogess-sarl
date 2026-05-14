@@ -4,6 +4,7 @@ import { SERVICES } from "./constants.js";
 
 export type EditableService = {
   id: string;
+  category: string;
   title: string;
   desc: string;
   longDesc: string;
@@ -24,6 +25,7 @@ export type TeamMember = {
 export type MediaItem = {
   id: string;
   title: string;
+  category: string;
   section: string;
   image: string;
   visible: boolean;
@@ -45,6 +47,29 @@ export type SiteContent = {
 };
 
 export const CMS_STORAGE_KEY = "cogese_site_content_v1";
+
+export const contentCategories = [
+  { value: "beauty", label: "Beauté & Esthétique" },
+  { value: "immigration", label: "Immigration & Voyage" },
+  { value: "logistics", label: "Logistique & Transport" },
+  { value: "products", label: "Produits ménagers & Formations" },
+  { value: "real-estate", label: "Immobilier & Services" },
+  { value: "team", label: "Équipe" },
+  { value: "general", label: "Général" },
+];
+
+export const serviceCategories = contentCategories.filter(
+  (category) => category.value !== "team" && category.value !== "general",
+);
+
+function categoryFromServiceId(id: string) {
+  if (id.includes("beauty")) return "beauty";
+  if (id.includes("immigration")) return "immigration";
+  if (id.includes("logistics")) return "logistics";
+  if (id.includes("domestic")) return "products";
+  if (id.includes("real-estate")) return "real-estate";
+  return "general";
+}
 
 export const availableImages = [
   "/new/perruque.jpg",
@@ -87,6 +112,7 @@ export const defaultTeam: TeamMember[] = [
 
 const defaultServices: EditableService[] = SERVICES.map((service) => ({
   id: service.id,
+  category: categoryFromServiceId(service.id),
   title: service.title,
   desc: service.desc,
   longDesc: service.longDesc,
@@ -97,10 +123,10 @@ const defaultServices: EditableService[] = SERVICES.map((service) => ({
 }));
 
 const defaultMedia: MediaItem[] = [
-  { id: "hero-beauty", title: "Beauté", section: "hero", image: "/new/perruque.jpg", visible: true },
-  { id: "hero-logistics", title: "Transit", section: "hero", image: "/new/shipping.jpg", visible: true },
-  { id: "hero-products", title: "Produits", section: "hero", image: "/new/savon liquide.jpg", visible: true },
-  { id: "hero-real-estate", title: "Immobilier", section: "hero", image: "/new/immeuble3.jpg", visible: true },
+  { id: "hero-beauty", title: "Beauté", category: "beauty", section: "hero", image: "/new/perruque.jpg", visible: true },
+  { id: "hero-logistics", title: "Transit", category: "logistics", section: "hero", image: "/new/shipping.jpg", visible: true },
+  { id: "hero-products", title: "Produits", category: "products", section: "hero", image: "/new/savon liquide.jpg", visible: true },
+  { id: "hero-real-estate", title: "Immobilier", category: "real-estate", section: "hero", image: "/new/immeuble3.jpg", visible: true },
 ];
 
 export const defaultSiteContent: SiteContent = {
@@ -137,9 +163,13 @@ export function loadSiteContent(): SiteContent {
 
     return {
       hero: { ...defaultSiteContent.hero, ...parsed.hero },
-      services: parsed.services?.length ? parsed.services : defaultSiteContent.services,
+      services: parsed.services?.length
+        ? parsed.services.map((service) => ({ ...service, category: service.category || categoryFromServiceId(service.id) }))
+        : defaultSiteContent.services,
       team: parsed.team?.length ? parsed.team : defaultSiteContent.team,
-      media: parsed.media?.length ? parsed.media : defaultSiteContent.media,
+      media: parsed.media?.length
+        ? parsed.media.map((item) => ({ ...item, category: item.category || "general" }))
+        : defaultSiteContent.media,
       updatedAt: parsed.updatedAt || defaultSiteContent.updatedAt,
     };
   } catch {

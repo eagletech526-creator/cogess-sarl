@@ -85,12 +85,12 @@ export const SERVICES = [
     title: "Immobilier & Services",
     desc: "Gestion immobilière sécurisée et services de maintenance pour vos propriétés.",
     icon: Building,
-    longDesc: "Confiez-nous la gestion de votre patrimoine immobilier. Avec le soutien de nos avocats, nous garantissons aux bailleurs le paiement de leurs loyers à temps. Nous assurons également la maintenance, la restauration des immeubles et proposons des services de loterie.",
+    longDesc: "Confiez-nous la gestion de votre patrimoine immobilier. Avec le soutien de nos avocats, nous garantissons aux bailleurs le paiement de leurs loyers à temps. Nous assurons également la maintenance, la restauration des immeubles.",
     features: [
       "Gestion immobilière assistée par avocats",
       "Maintenance & Restauration d'immeubles",
       "Garantie de revenus locatifs",
-      "Services de loterie & Conciergerie"
+      "Services de literie & Conciergerie"
     ],
     image: "/new/immeuble1.jpg",
     gallery: [

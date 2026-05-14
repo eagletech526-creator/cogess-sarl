@@ -123,7 +123,7 @@ export const Navbar = () => {
               {!isSignedIn && (
                 <SignInButton mode="modal">
                   <button className="bg-primary-700 text-white text-center py-4 rounded font-bold uppercase tracking-widest shadow-lg">
-                    Accès Client
+                    Se Connecter
                   </button>
                 </SignInButton>
               )}

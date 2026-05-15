@@ -81,7 +81,7 @@ export const Navbar = () => {
               <SignInButton mode="modal">
                 <button className="bg-primary-700 text-white px-6 py-2.5 rounded text-xs font-bold uppercase tracking-widest hover:bg-primary-800 transition-all shadow-md active:scale-95 flex items-center gap-2">
                   <User size={14} />
-                  Accès Client
+                  Se connecter
                 </button>
               </SignInButton>
             )}
@@ -123,7 +123,7 @@ export const Navbar = () => {
               {!isSignedIn && (
                 <SignInButton mode="modal">
                   <button className="bg-primary-700 text-white text-center py-4 rounded font-bold uppercase tracking-widest shadow-lg">
-                    Se Connecter
+                    Se connecter
                   </button>
                 </SignInButton>
               )}

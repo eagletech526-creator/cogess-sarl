@@ -6,6 +6,9 @@ import { useSiteContent } from "../cms.js";
 export const Home = () => {
   const { content, services, media } = useSiteContent();
   const heroBackground = media.find((item) => item.id === "hero-real-estate")?.image || "/welcome image.jpg";
+  const phoneNumber = "691293948";
+  const whatsappNumber = "671987009";
+  const countryCode = "237";
 
   return (
     <div className="bg-slate-50">
@@ -228,8 +231,25 @@ export const Home = () => {
                 <PhoneCall size={22} />
               </div>
               <p className="text-sm font-bold text-white/60">Contact direct</p>
-              <p className="mt-2 text-2xl font-extrabold">691293948</p>
-              <p className="mt-1 text-sm font-semibold text-white/60">WhatsApp : 671987009</p>
+              <p className="mt-2 text-2xl font-extrabold">
+                <a
+                  href={`tel:+${countryCode}${phoneNumber}`}
+                  className="transition hover:text-white/80"
+                >
+                  {phoneNumber}
+                </a>
+              </p>
+              <p className="mt-1 text-sm font-semibold text-white/60">
+                WhatsApp :{" "}
+                <a
+                  href={`https://wa.me/${countryCode}${whatsappNumber}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="transition hover:text-white"
+                >
+                  {whatsappNumber}
+                </a>
+              </p>
               <Link
                 to="/contact"
                 className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-white px-6 py-3 text-xs font-extrabold uppercase tracking-[0.18em] text-slate-950 transition hover:bg-slate-100"

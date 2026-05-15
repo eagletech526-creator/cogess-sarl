@@ -3,6 +3,10 @@ import { motion } from "motion/react";
 import { useUser } from "@clerk/clerk-react";
 
 export const Contact = () => {
+  const phoneNumber = "691293948";
+  const whatsappNumber = "671987009";
+  const emailAddress = "cogese2026@gmail.com";
+  const countryCode = "237";
   const { isSignedIn, user } = useUser();
   const [formData, setFormData] = useState({ 
     name: user?.fullName || "", 
@@ -73,9 +77,34 @@ export const Contact = () => {
               </div>
               <div className="space-y-1">
                 <p className="text-[10px] uppercase font-bold text-slate-400 tracking-widest">Contact Direct</p>
-                <p className="text-sm text-slate-700">Tél : 691293948</p>
-                <p className="text-sm text-slate-700">WhatsApp : 671987009</p>
-                <p className="text-sm text-slate-700">cogese2026@gmail.com</p>
+                <p className="text-sm text-slate-700">
+                  Tél :{" "}
+                  <a
+                    href={`tel:+${countryCode}${phoneNumber}`}
+                    className="font-semibold text-primary-700 transition hover:text-primary-800"
+                  >
+                    {phoneNumber}
+                  </a>
+                </p>
+                <p className="text-sm text-slate-700">
+                  WhatsApp :{" "}
+                  <a
+                    href={`https://wa.me/${countryCode}${whatsappNumber}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="font-semibold text-primary-700 transition hover:text-primary-800"
+                  >
+                    {whatsappNumber}
+                  </a>
+                </p>
+                <p className="text-sm text-slate-700">
+                  <a
+                    href={`mailto:${emailAddress}`}
+                    className="font-semibold text-primary-700 transition hover:text-primary-800"
+                  >
+                    {emailAddress}
+                  </a>
+                </p>
               </div>
             </div>
           </div>
